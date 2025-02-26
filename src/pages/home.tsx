@@ -33,12 +33,12 @@ export const Home = () => {
         />
         <meta
           property="og:image"
-          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5"
+          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5?v=2"
         />
 
         <meta
           property="image"
-          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5"
+          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5?v=2"
         />
         <meta property="og:type" content="website" />
       </Helmet>
