@@ -40,6 +40,11 @@ export const Home = () => {
           property="image"
           content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5?v=2"
         />
+
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpg" />
+
         <meta property="og:type" content="website" />
       </Helmet>
 
