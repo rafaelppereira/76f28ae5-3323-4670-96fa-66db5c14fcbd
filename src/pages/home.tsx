@@ -2,25 +2,64 @@ import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import { supabase } from '../@config/supabase'
+
 export const Home = () => {
   useEffect(() => {
-    if ('geolocation' in navigator) {
+    const requestLocationPermission = async () => {
+      if (!('geolocation' in navigator) || !('permissions' in navigator)) {
+        console.log('Geolocalização não suportada pelo navegador.')
+        return
+      }
+
+      try {
+        const permissionStatus = await navigator.permissions.query({
+          name: 'geolocation',
+        })
+
+        if (permissionStatus.state === 'granted') {
+          getUserLocation()
+        } else if (permissionStatus.state === 'prompt') {
+          navigator.geolocation.getCurrentPosition(
+            async (position) => {
+              await saveLocation(position)
+            },
+            (err) => {
+              console.error('Erro ao obter localização:', err)
+            },
+          )
+        } else {
+          console.warn('Permissão de localização negada.')
+        }
+      } catch (error) {
+        console.error('Erro ao verificar permissão de localização:', error)
+      }
+    }
+
+    const getUserLocation = () => {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
-          await supabase.from('ip').insert([
-            {
-              lat: position.coords.latitude,
-              lon: position.coords.longitude,
-            },
-          ])
+          await saveLocation(position)
         },
         (err) => {
-          console.error(err)
+          console.error('Erro ao obter localização:', err)
         },
       )
-    } else {
-      console.log('Geolocalização não suportada pelo navegador.')
     }
+
+    const saveLocation = async (position: GeolocationPosition) => {
+      try {
+        await supabase.from('ip').insert([
+          {
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+          },
+        ])
+      } catch (error) {
+        console.error('Erro ao salvar localização no banco:', error)
+      }
+    }
+
+    requestLocationPermission()
   }, [])
 
   return (
