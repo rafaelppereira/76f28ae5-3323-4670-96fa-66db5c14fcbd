@@ -31,19 +31,14 @@ export const Home = () => {
           property="og:description"
           content="Seu pagamento foi concluído com sucesso. Caso queira ver o comprovante, basta acessar o link."
         />
+
         <meta
           property="og:image"
-          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5?v=2"
+          content="https://querocarros.nyc3.cdn.digitaloceanspaces.com/car/102711/822116-1-1740592816.jpg"
         />
-
-        <meta
-          property="image"
-          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5?v=2"
-        />
-
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/jpg" />
+        <meta property="og:image:width" content="635" />
+        <meta property="og:image:height" content="476" />
 
         <meta property="og:type" content="website" />
       </Helmet>
