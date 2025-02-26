@@ -34,7 +34,11 @@ export const Home = () => {
 
         <meta
           property="og:image"
-          content="https://querocarros.nyc3.cdn.digitaloceanspaces.com/car/102711/822116-1-1740592816.jpg"
+          content="https://i.pinimg.com/736x/f9/fe/50/f9fe50dbdfd23e12ad00f3ddad477b8c.jpg"
+        />
+        <meta
+          property="image"
+          content="https://i.pinimg.com/736x/f9/fe/50/f9fe50dbdfd23e12ad00f3ddad477b8c.jpg"
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="635" />
