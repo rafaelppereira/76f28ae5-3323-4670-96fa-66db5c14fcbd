@@ -31,7 +31,10 @@ export const Home = () => {
           property="og:description"
           content="Seu pagamento foi concluído com sucesso. Caso queira ver o comprovante, basta acessar o link."
         />
-        <meta property="og:image" content="/preview-image.png" />
+        <meta
+          property="og:image"
+          content="https://media.graphassets.com/output=format:jpg/BZW9cdOyQHqM0hSyhss5"
+        />
         <meta property="og:type" content="website" />
       </Helmet>
 
